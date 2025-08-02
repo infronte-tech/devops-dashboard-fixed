@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Employment Analysis Dashboard 2025</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="container">
+                <h1 class="dashboard-title">DevOps Employment Analysis Dashboard 2025</h1>
+                <p class="dashboard-subtitle">UK & European Tech Market Insights</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="dashboard-nav" aria-label="Dashboard navigation">
+            <div class="container">
+                <ul class="nav-tabs" role="tablist">
+                    <li><a href="#" class="nav-tab active" role="tab" aria-selected="true" data-tab="overview">Overview</a></li>
+                    <li><a href="#" class="nav-tab" role="tab" aria-selected="false" data-tab="job-market">Job Market</a></li>
+                    <li><a href="#" class="nav-tab" role="tab" aria-selected="false" data-tab="salary-analysis">Salary Analysis</a></li>
+                    <li><a href="#" class="nav-tab" role="tab" aria-selected="false" data-tab="skills-trends">Skills & Trends</a></li>
+                    <li><a href="#" class="nav-tab" role="tab" aria-selected="false" data-tab="market-forecast">Market Forecast</a></li>
+                    <li><a href="#" class="nav-tab" role="tab" aria-selected="false" data-tab="industry-insights">Industry Insights</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Tab -->
+            <section id="overview" class="tab-content active" role="tabpanel">
+                <div class="container">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-icon">💼</div>
+                            <div class="metric-value" data-counter="589">0</div>
+                            <div class="metric-label">UK DevOps Jobs (2025)</div>
+                            <div class="metric-change negative">-45.2% vs 2024</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">💰</div>
+                            <div class="metric-value" data-counter="74870">£0</div>
+                            <div class="metric-label">Median Salary (UK)</div>
+                            <div class="metric-change positive">+6.96% vs 2024</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">📊</div>
+                            <div class="metric-value" data-counter="15.06">$0B</div>
+                            <div class="metric-label">Market Size (2025)</div>
+                            <div class="metric-change positive">+20.1% vs 2024</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-icon">📈</div>
+                            <div class="metric-value" data-counter="26.1">0%</div>
+                            <div class="metric-label">CAGR (2025-2029)</div>
+                            <div class="metric-change positive">Strong Growth</div>
+                        </div>
+                    </div>
+
+                    <div class="overview-summary">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Market Overview</h3>
+                                <p>The DevOps market shows strong fundamentals despite a temporary dip in job postings. While UK permanent positions decreased from 1,075 in 2024 to 589 in 2025, median salaries have recovered to £74,870 (+6.96%). The global DevOps market is projected to reach $38.11B by 2029, with a robust CAGR of 26.1%.</p>
+                                <div class="quick-stats">
+                                    <div class="stat">
+                                        <span class="stat-label">LinkedIn EU Jobs:</span>
+                                        <span class="stat-value">109,000</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Organization Success Rate:</span>
+                                        <span class="stat-value">99%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="stat-label">Quality Improvement:</span>
+                                        <span class="stat-value">61%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Job Market Tab -->
+            <section id="job-market" class="tab-content" role="tabpanel" aria-hidden="true">
+                <div class="container">
+                    <div class="charts-row">
+                        <div class="chart-container">
+                            <h3>UK DevOps Job Trends (2023-2025)</h3>
+                            <canvas id="jobTrendsChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>European Job Distribution</h3>
+                            <canvas id="europeJobsChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="job-boards-section">
+                        <h3>Job Board Statistics</h3>
+                        <div class="job-boards-grid">
+                            <div class="job-board-card">
+                                <h4>LinkedIn</h4>
+                                <div class="job-count">1,000</div>
+                                <div class="job-location">UK Jobs</div>
+                            </div>
+                            <div class="job-board-card">
+                                <h4>Indeed</h4>
+                                <div class="job-count">1,000</div>
+                                <div class="job-location">UK Jobs</div>
+                            </div>
+                            <div class="job-board-card">
+                                <h4>CWJobs</h4>
+                                <div class="job-count">251</div>
+                                <div class="job-location">UK Jobs</div>
+                            </div>
+                            <div class="job-board-card">
+                                <h4>LinkedIn EU</h4>
+                                <div class="job-count">109,000</div>
+                                <div class="job-location">EU Jobs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Salary Analysis Tab -->
+            <section id="salary-analysis" class="tab-content" role="tabpanel" aria-hidden="true">
+                <div class="container">
+                    <div class="charts-row">
+                        <div class="chart-container">
+                            <h3>Salary Distribution (UK 2025)</h3>
+                            <canvas id="salaryDistributionChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Regional Salary Comparison</h3>
+                            <canvas id="regionalSalaryChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="salary-breakdown">
+                        <h3>Experience Level Breakdown</h3>
+                        <div class="experience-grid">
+                            <div class="experience-card">
+                                <h4>Junior (0-2 years)</h4>
+                                <div class="salary-range">
+                                    <span class="salary-min">£28,000</span>
+                                    <span class="salary-median">£35,750</span>
+                                    <span class="salary-max">£45,000</span>
+                                </div>
+                                <div class="salary-labels">
+                                    <span>Min</span>
+                                    <span>Median</span>
+                                    <span>Max</span>
+                                </div>
+                            </div>
+                            <div class="experience-card">
+                                <h4>Mid-level (3-5 years)</h4>
+                                <div class="salary-range">
+                                    <span class="salary-min">£58,000</span>
+                                    <span class="salary-median">£74,870</span>
+                                    <span class="salary-max">£85,000</span>
+                                </div>
+                                <div class="salary-labels">
+                                    <span>Min</span>
+                                    <span>Median</span>
+                                    <span>Max</span>
+                                </div>
+                            </div>
+                            <div class="experience-card">
+                                <h4>Senior (5+ years)</h4>
+                                <div class="salary-range">
+                                    <span class="salary-min">£75,000</span>
+                                    <span class="salary-median">£85,000</span>
+                                    <span class="salary-max">£115,000</span>
+                                </div>
+                                <div class="salary-labels">
+                                    <span>Min</span>
+                                    <span>Median</span>
+                                    <span>Max</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills & Trends Tab -->
+            <section id="skills-trends" class="tab-content" role="tabpanel" aria-hidden="true">
+                <div class="container">
+                    <div class="charts-row">
+                        <div class="chart-container">
+                            <h3>Top In-Demand Skills</h3>
+                            <canvas id="skillsChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Skill Growth Trends</h3>
+                            <canvas id="skillGrowthChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Infrastructure & Cloud</h4>
+                            <div class="skill-bars">
+                                <div class="skill-bar">
+                                    <span class="skill-name">Terraform</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" style="width: 88%"></div>
+                                    </div>
+                                    <span class="skill-percentage">88%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">Kubernetes</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" style="width: 76%"></div>
+                                    </div>
+                                    <span class="skill-percentage">76%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">AWS</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" style="width: 72%"></div>
+                                    </div>
+                                    <span class="skill-percentage">72%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">Docker</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" style="width: 68%"></div>
+                                    </div>
+                                    <span class="skill-percentage">68%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Programming & Monitoring</h4>
+                            <div class="skill-bars">
+                                <div class="skill-bar">
+                                    <span class="skill-name">Python</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" style="width: 80%"></div>
+                                    </div>
+                                    <span class="skill-percentage">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">Azure</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" style="width: 60%"></div>
+                                    </div>
+                                    <span class="skill-percentage">60%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">Grafana</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" style="width: 54%"></div>
+                                    </div>
+                                    <span class="skill-percentage">54%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <span class="skill-name">Prometheus</span>
+                                    <div class="skill-progress">
+                                        <div class="skill-fill" style="width: 48%"></div>
+                                    </div>
+                                    <span class="skill-percentage">48%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Market Forecast Tab -->
+            <section id="market-forecast" class="tab-content" role="tabpanel" aria-hidden="true">
+                <div class="container">
+                    <div class="charts-row">
+                        <div class="chart-container">
+                            <h3>Market Size Projections (2024-2029)</h3>
+                            <canvas id="marketForecastChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3>Regional Market Share</h3>
+                            <canvas id="growthRateChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="forecast-metrics">
+                        <div class="forecast-card">
+                            <h4>Market Growth</h4>
+                            <div class="forecast-value">$38.11B</div>
+                            <div class="forecast-label">By 2029</div>
+                            <div class="forecast-change">+266% from 2024</div>
+                        </div>
+                        <div class="forecast-card">
+                            <h4>CAGR</h4>
+                            <div class="forecast-value">26.1%</div>
+                            <div class="forecast-label">2025-2029</div>
+                            <div class="forecast-change">Strong Growth</div>
+                        </div>
+                        <div class="forecast-card">
+                            <h4>Europe Market Share</h4>
+                            <div class="forecast-value">28.2%</div>
+                            <div class="forecast-label">Global Share</div>
+                            <div class="forecast-change">Second Largest</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Industry Insights Tab -->
+            <section id="industry-insights" class="tab-content" role="tabpanel" aria-hidden="true">
+                <div class="container">
+                    <div class="insights-grid">
+                        <div class="insight-card">
+                            <h4>DevOps Adoption Rate</h4>
+                            <div class="insight-value">77%</div>
+                            <div class="insight-description">Organizations using DevOps practices</div>
+                        </div>
+                        <div class="insight-card">
+                            <h4>Success Rate</h4>
+                            <div class="insight-value">99%</div>
+                            <div class="insight-description">Organizations with positive outcomes</div>
+                        </div>
+                        <div class="insight-card">
+                            <h4>Quality Improvement</h4>
+                            <div class="insight-value">61%</div>
+                            <div class="insight-description">Average quality improvement</div>
+                        </div>
+                        <div class="insight-card">
+                            <h4>Delivery Speed</h4>
+                            <div class="insight-value">58%</div>
+                            <div class="insight-description">Faster delivery times</div>
+                        </div>
+                        <div class="insight-card">
+                            <h4>Gartner Projection 2027</h4>
+                            <div class="insight-value">80%</div>
+                            <div class="insight-description">Expected adoption rate</div>
+                        </div>
+                        <div class="insight-card">
+                            <h4>LinkedIn EU Jobs</h4>
+                            <div class="insight-value">109K</div>
+                            <div class="insight-description">Current job openings</div>
+                        </div>
+                    </div>
+                    
+                    <div class="industry-summary">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Industry Outlook</h3>
+                                <p>The DevOps landscape continues to evolve with strong fundamentals. Despite temporary job market adjustments, the industry shows robust growth potential driven by AI integration, cloud adoption, and digital transformation initiatives. Organizations report 99% positive outcomes from DevOps implementations, with 61% experiencing quality improvements.</p>
+                                <div class="outlook-points">
+                                    <div class="point">
+                                        <span class="point-icon">🚀</span>
+                                        <span class="point-text">AI-driven automation increasing demand for skilled DevOps engineers</span>
+                                    </div>
+                                    <div class="point">
+                                        <span class="point-icon">☁️</span>
+                                        <span class="point-text">Cloud-native adoption accelerating, creating new opportunities</span>
+                                    </div>
+                                    <div class="point">
+                                        <span class="point-icon">🔒</span>
+                                        <span class="point-text">DevSecOps integration addressing cybersecurity skills shortage</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="container">
+                <p>&copy; 2025 DevOps Employment Analysis Dashboard. Data sources: LinkedIn, Indeed, CWJobs, Industry Reports</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
