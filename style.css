@@ -1396,3 +1396,133 @@ body {
   width: 100% !important;
   height: 100% !important;
 }
+
+/* =========================
+   LANDING-PAGE THEME LAYER
+   ========================= */
+
+/* Brand palette (RGB for alpha control) */
+:root {
+  --lp-blue: 0, 87, 184;          /* #0057B8 */
+  --lp-blue-dark: 0, 68, 204;     /* #0044CC */
+  --lp-teal: 0, 191, 255;         /* #00BFFF */
+  --lp-cyan: 0, 255, 255;         /* #00FFFF */
+
+  --lp-bg-start: 248, 250, 252;   /* slate-50 */
+  --lp-bg-mid: 255, 255, 255;     /* white */
+  --lp-bg-end: 239, 246, 255;     /* blue-50 */
+}
+
+/* Turn the theme on by putting class="theme-landing" on <body> */
+.theme-landing {
+  /* Background system: light gradient + floating orbs */
+  background: linear-gradient(
+    135deg,
+    rgba(var(--lp-bg-start),1) 0%,
+    rgba(var(--lp-bg-mid),1) 45%,
+    rgba(var(--lp-bg-end),1) 100%
+  );
+  color: rgba(17,24,39,.9);
+}
+
+/* Floating background “orbs” */
+.theme-landing .bg-orb{
+  position:absolute; width:480px; height:480px;
+  border-radius:50%; filter:blur(60px); opacity:.10;
+  pointer-events:none; z-index:0; animation: lp-floaty 18s ease-in-out infinite;
+}
+.theme-landing .bg-orb.blue{
+  background: radial-gradient(circle at 30% 30%,
+    rgba(var(--lp-blue),1) 0%, transparent 60%);
+}
+.theme-landing .bg-orb.teal{
+  background: radial-gradient(circle at 70% 70%,
+    rgba(var(--lp-teal),1) 0%, transparent 65%);
+}
+@keyframes lp-floaty{
+  0%{transform:translate3d(0,0,0) scale(1)}
+  50%{transform:translate3d(20px,-10px,0) scale(1.03)}
+  100%{transform:translate3d(0,0,0) scale(1)}
+}
+
+/* Glassmorphism utilities */
+.theme-landing .glass-card{
+  background: rgba(255,255,255,.70);
+  -webkit-backdrop-filter: saturate(120%) blur(20px);
+  backdrop-filter: saturate(120%) blur(20px);
+  border: 1px solid rgba(255,255,255,.20);
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+  border-radius: var(--radius-lg);
+}
+
+/* Buttons: brand blue→teal gradient */
+.theme-landing .btn--primary{
+  background-image: linear-gradient(135deg,
+    rgb(var(--lp-blue)) 0%,
+    rgb(var(--lp-blue-dark)) 40%,
+    rgb(var(--lp-teal)) 100%);
+  color:#fff; border:1px solid rgba(255,255,255,.28);
+  box-shadow: 0 8px 22px rgba(0,87,184,.25);
+}
+.theme-landing .btn--primary:hover{
+  filter:brightness(1.03);
+  box-shadow: 0 12px 28px rgba(0,87,184,.35);
+}
+
+/* Map existing components to the glass style */
+.theme-landing .card,
+.theme-landing .metric-card,
+.theme-landing .chart-container,
+.theme-landing .skill-category,
+.theme-landing .experience-card,
+.theme-landing .insight-card,
+.theme-landing .forecast-card{
+  background: rgba(255,255,255,.70);
+  border: 1px solid rgba(255,255,255,.20);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+  color: rgba(17,24,39,.9);
+}
+
+/* Headers / rails pick up a softer brand gradient */
+.theme-landing .dashboard-header{
+  background-image: linear-gradient(135deg,
+    rgb(var(--lp-blue)) 0%,
+    rgb(var(--lp-blue-dark)) 35%,
+    rgb(var(--lp-teal)) 100%);
+  box-shadow: 0 10px 24px rgba(0,87,184,.18);
+}
+.theme-landing .dashboard-nav{
+  background: rgba(255,255,255,.55);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+/* Brand accents for numbers/badges */
+.theme-landing .metric-value,
+.theme-landing .insight-value,
+.theme-landing .stat-value{
+  color: rgb(var(--lp-blue));
+}
+.theme-landing .metric-change.positive{ background: rgba(var(--lp-cyan), .18); color: rgb(var(--lp-blue-dark)); }
+.theme-landing .metric-change.negative{ background: rgba(255,0,0,.10); color: #B91C1C; }
+
+/* Table/hover subtleties if you have tables */
+.theme-landing table tbody tr:hover{
+  background: rgba(0, 87, 184, .04);
+}
+
+/* Keep charts visible on glass */
+.theme-landing .chart-container{
+  background: rgba(255,255,255,.66);
+  border-radius: var(--radius-lg);
+}
+
+/* Optional dark “particle” section that still fits palette */
+.theme-landing .section--dark{
+  background:#1B1B22; color:#E8E8F0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+}
